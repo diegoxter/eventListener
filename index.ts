@@ -1,5 +1,5 @@
 const ethers = require('ethers')
-const eventTesterABI = require("./artifacts/contracts/EventTester.sol/EventTester.json")
+const eventTesterABI = require("./abis/EventTester.json")
 require('dotenv').config()
 
 async function main() {
@@ -8,6 +8,7 @@ async function main() {
        `wss://${process.env.RIVET_KEY}.sepolia.ws.rivet.cloud`
     )
     const contract = new ethers.Contract(eventTesterAddress, eventTesterABI, provider)
+    console.log('Connected to: ' + (await provider.getNetwork()).name)
 
     console.log("Leyendo eventos")
     contract.on('TestEvent', (blockTime, blocknumber, emitter) => {
@@ -18,6 +19,8 @@ async function main() {
         }
         console.log(JSON.stringify(info, null, 4))
     })
+
+   //process.exit()
 }
 
 main()

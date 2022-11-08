@@ -8,8 +8,7 @@
     "license": "MIT",
     "scripts": {
       "format:check": "prettier --check ./**/*.{js,ts,sol}",
-      "format:write": "prettier --write ./**/*.{js,ts,sol}",
-      "prepare": "husky install"
+      "format:write": "prettier --write ./**/*.{js,ts,sol}"
     },
     "devDependencies": {
       "@nomiclabs/hardhat-ethers": "^2.0.2",
