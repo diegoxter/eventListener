@@ -1,4 +1,4 @@
-const { artifacts, contract, ethers, network } = require('hardhat')
+const ethers = require('ethers')
 var readline = require('readline');
 const eventTesterABI = require("./abis/EventTester.json")
 require('dotenv').config()
