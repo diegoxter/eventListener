@@ -1,9 +1,9 @@
 {
-    "name": "listener",
+    "name": "evm-event-listener",
     "version": "0.0.1",
-    "description": "Listener",
+    "description": "Listens to evm compatible events depending on the address",
     "private": true,
-    "repository": "",
+    "repository": "https://github.com/diegoxter/eventListener",
     "author": "Jiego",
     "license": "MIT",
     "scripts": {
