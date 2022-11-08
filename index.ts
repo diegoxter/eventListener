@@ -32,7 +32,6 @@ async function main() {
         console.log("Now wait a second transaction here... ... ...")
     }
 
-
     console.log('Connected to ' + (await wssSepolia.getNetwork()).name + ' and ' + (await wssGoerli.getNetwork()).name)
     console.log("Waiting for events... ... ...")
     eventTester.on('TestEvent', async (blockTime, blocknumber, emitter) => {
@@ -43,9 +42,13 @@ async function main() {
             emitter: emitter,
         }
         console.log(JSON.stringify(info, null, 4))
-        console.log("Now let's send a multichain transaction to Goerli...")
-
-       await sendEventToReceiver()
+       
+        if (process.argv[2] && process.argv[2] === '-r') {
+            console.log('We should wait for another transaction to come... ... ...');
+        } else {
+            console.log("Now let's send a multichain transaction to Goerli...")
+            await sendEventToReceiver()
+        }
     })
 
     eventReceiverListener.on('TestEventReceived', (blockTime, blocknumber, emitter) => {

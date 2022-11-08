@@ -9,7 +9,8 @@
     "scripts": {
       "format:check": "prettier --check ./**/*.{js,ts,sol}",
       "run:control": "hardhat run ./controlPanel.ts --network sepolia",
-      "run:listen": "node ./index.ts",
+      "run:listen": "node ./index.ts -r",
+      "run:reply": "node ./index.ts",
       "format:write": "prettier --write ./**/*.{js,ts,sol}"
     },
     "devDependencies": {
