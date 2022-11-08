@@ -1,6 +1,6 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 require('dotenv').config()
-require('@nomiclabs/hardhat-ethers')
+require("@nomiclabs/hardhat-ethers");
 
 const MNEMONIC = process.env.MNEMONIC
 const RIVET_KEY = process.env.RIVET_KEY

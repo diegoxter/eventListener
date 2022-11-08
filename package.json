@@ -8,14 +8,19 @@
     "license": "MIT",
     "scripts": {
       "format:check": "prettier --check ./**/*.{js,ts,sol}",
+      "run:control": "hardhat run ./controlPanel.ts --network sepolia",
+      "run:listen": "node ./index.ts",
       "format:write": "prettier --write ./**/*.{js,ts,sol}"
     },
     "devDependencies": {
       "@types/chai": "^4.2.21",
       "@types/mocha": "^8.2.2",
-      "dotenv": "^8.2.0",
+      "hardhat": "^2.11.2",
+      "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
+      "hardhat-abi-exporter": "2.0.6",
+      "@nomiclabs/hardhat-ethers": "^2.0.2",
       "ethers": "^5.0.23",
-      "hardhat-watcher": "^2.1.1",
+      "dotenv": "^8.2.0",
       "prettier": "^2.3.2",
       "prettier-plugin-solidity": "^1.0.0-beta.17",
       "solidity-coverage": "^0.7.13",
