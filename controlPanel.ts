@@ -1,6 +1,6 @@
 const { artifacts, contract, network, ethers } = require('hardhat')
 var readline = require('readline');
-const eventTesterABI = require("./abis/EventTester.json");
+// const eventTesterABI = require("./abis/EventTester.json");
 require('dotenv').config();
 
 async function emitEvent() {
