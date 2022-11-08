@@ -34,8 +34,10 @@ async function main() {
 
     console.log('Connected to ' + (await wssSepolia.getNetwork()).name + ' and ' + (await wssGoerli.getNetwork()).name)
     console.log("Waiting for events... ... ...")
-    eventTester.on('TestEvent', async (blockTime, blocknumber, emitter) => {
+    eventTester.on('TestEvent', async (blockTime, blocknumber, emitter, event) => {
         console.log('EventTester emitted from Sepolia!')
+        console.log('Verify the transaction here: https://sepolia.etherscan.io/tx/' + event.transactionHash)
+
         let info = {
             blockTime: new Date((ethers.BigNumber.from(blockTime).toNumber())*1000),
             blocknumber: ethers.BigNumber.from(blocknumber).toNumber(),
